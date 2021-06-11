@@ -6,6 +6,7 @@ const app = express();
 
 // import routes
 const projectRoutes = require("./routes/project");
+const assignmentRoutes = require("./routes/assignment");
 const authRoutes = require('./routes/auth');
 
 
@@ -32,6 +33,7 @@ app.get("/api/welcome", (req, res) => {
 
 //post, put, delete -> CRUD
 app.use("/api/projects", projectRoutes);
+app.use("/api/assignments", assignmentRoutes);
 app.use("/api/user", authRoutes);
 
 const PORT = process.env.PORT || 4000;
