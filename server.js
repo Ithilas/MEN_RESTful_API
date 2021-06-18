@@ -2,11 +2,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const cors = require('cors');
 const app = express();
 
 
-const swaggerUI = require('swagger-ui-express');
+const swaggerUi = require('swagger-ui-express');
 const yaml = require('yamljs');
 
 // swagger setup
@@ -23,7 +22,6 @@ require("dotenv-flow").config();
 
 // parse request of content-type JSON
 app.use(bodyParser.json());
-app.use(cors());
 
 mongoose.connect
 (

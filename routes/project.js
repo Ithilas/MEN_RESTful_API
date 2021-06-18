@@ -39,7 +39,7 @@ router.get("/:id", (req, res) => {
 
 
 // Update specific project - put
-router.put("/:id", verifytoken, (req, res) => {
+router.put("/:id", verifyToken, (req, res) => {
 
     const id = req. params.id;
 
@@ -59,7 +59,7 @@ router.put("/:id", verifytoken, (req, res) => {
 });
 
 // Delete specific project - delete
-router.delete("/:id", verifytoken, (req, res) => {
+router.delete("/:id", verifyToken, (req, res) => {
 
     const id = req. params.id;
 
