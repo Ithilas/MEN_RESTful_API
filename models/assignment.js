@@ -6,6 +6,10 @@ let assignmentSchema = new Schema(
 {
     name: {type: String},
     description: {type: String},
+    project_id: {type: String},
+    to_do: {type: Boolean},
+    in_progress: {type: Boolean},
+    complete: {type: Boolean}
 }
 );
 

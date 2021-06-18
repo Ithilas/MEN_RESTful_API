@@ -7,7 +7,7 @@ const { verifyToken } = require("../validation");
 // /api/assignments/
 // Create assignment - post
 
-router.post("/", verifyToken, (req, res) => {
+router.post("/", (req, res) => {
 
     data = req.body;
 
@@ -27,15 +27,6 @@ router.get("/", (req, res) => {
     .then(data => { res.send(data); })
     .catch(err => { res.status(500).send( {message: err.message }); })
 });
-
-// Read all assignment assigne - get
-
-// router.get("/instock", (req, res) => {
-
-//     project.find({ inStock: true })
-//     .then(data => { res.send(data); })
-//     .catch(err => { res.status(500).send( {message: err.message }); })
-// });
 
 // Read specific assignment - get
 

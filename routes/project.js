@@ -19,7 +19,7 @@ router.post("/", verifyToken, (req, res) => {
 
 // /api/project/
 
-// Read all project - get
+// Read all projects - get
 
 router.get("/", (req, res) => {
 
@@ -27,15 +27,6 @@ router.get("/", (req, res) => {
     .then(data => { res.send(data); })
     .catch(err => { res.status(500).send( {message: err.message }); })
 });
-
-// Read all project in stock - get
-
-// router.get("/instock", (req, res) => {
-
-//     project.find({ inStock: true })
-//     .then(data => { res.send(data); })
-//     .catch(err => { res.status(500).send( {message: err.message }); })
-// });
 
 // Read specific project - get
 
@@ -48,7 +39,7 @@ router.get("/:id", (req, res) => {
 
 
 // Update specific project - put
-router.put("/:id", verifyToken, (req, res) => {
+router.put("/:id", verifytoken, (req, res) => {
 
     const id = req. params.id;
 
@@ -68,7 +59,7 @@ router.put("/:id", verifyToken, (req, res) => {
 });
 
 // Delete specific project - delete
-router.delete("/:id", verifyToken, (req, res) => {
+router.delete("/:id", verifytoken, (req, res) => {
 
     const id = req. params.id;
 

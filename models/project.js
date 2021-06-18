@@ -6,6 +6,7 @@ let projectSchema = new Schema(
 {
     name: {type: String},
     description: {type: String},
+    complete: {type: Boolean}
 }
 );
 
