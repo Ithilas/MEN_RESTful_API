@@ -5,14 +5,14 @@ const Assignment = require('../models/assignment');
 const User = require('../models/user');
 
 
-before((done) => {
+beforeEach((done) => {
     Project.deleteMany({}, function(err) {});
     Assignment.deleteMany({}, function(err) {});
     User.deleteMany({}, function(err) {});
     done();
 });
 
-after((done) => {
+afterEach((done) => {
     Project.deleteMany({}, function(err) {});
     Assignment.deleteMany({}, function(err) {});
     User.deleteMany({}, function(err) {});

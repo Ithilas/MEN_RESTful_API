@@ -25,11 +25,6 @@ let userSchema = new Schema(
             min: 6,
             max: 255
         },
-        date:
-        {
-            type: Date,
-            default: Date.now
-        }
     }
 )
 
