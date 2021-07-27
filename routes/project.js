@@ -7,12 +7,13 @@ const { verifyToken } = require("../validation");
 // /api/projects/
 // Create project - post
 
-router.post("/", verifyToken, (req, res) => {
+//router.post("/", verifyToken, (req, res) => {
+router.post("/", (req, res) => {
 
     data = req.body;
 
     project.insertMany(data)
-    .then(data => { res.send(data); })
+    .then(data => { res.status(201).send(data); })
     .catch(err => { res.status(500).send( {message: err.message }); })
 });
 

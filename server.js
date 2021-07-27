@@ -35,6 +35,7 @@ mongoose.connect
 mongoose.connection.once("open", () => console.log("Connected succesfully to MongoDB"));
 
 //routes
+//Welcome route
 app.get("/api/welcome", (req, res) => {
     res.status(200).send({message: "Welcome to the MEN RESTful API"});
 })
