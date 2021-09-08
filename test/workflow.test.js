@@ -23,8 +23,7 @@ describe('/First Test Collection', () => {
         });
     });
 
-    // adding comment to test
-    // Test of Users in the DB
+        // Test of Users in the DB
 
     it('should register + login a user, create project and verify 1 in DB', (done) => {
 
