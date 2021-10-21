@@ -54,6 +54,16 @@ components:
         complete:
           type: boolean
 
+    Object:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+
 paths:
 
   /user/register:
@@ -315,4 +325,107 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Assignment"
+              
+  /objects:
+    get:
+      summary: Retrieves a list of Objects
+      description: Retrieves a list of objectss as JSON objects.
+      responses:
+        200:
+          description: A list of object JSON objects in an array.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Object"
+    
+    post:
+      summary: Create a new Object
+      description: Create a new Object
+      security:
+        - ApiKeyAuth: []      
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Object"
+
+      responses:
+        201:
+          description: Object created succesfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Object"
+  
+  /objects/{id}:
+    get:
+      summary: Specific Object
+      description: Retrieves a specific Object based on it id.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: MongoDB id
+          schema:
+            type: string
+      responses:
+        200:
+          description: A Object in the format of a JSON object.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Object"
+   
+    put:
+      summary: Updates a specific Object
+      description: Updates a specific Object based on it id
+      security:
+        - ApiKeyAuth: []            
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: MongoDB id
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Object"
+
+      responses:
+        201:
+          description: Object updated succesfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Object"
+
+    delete:
+      summary: Deletes a specific Object
+      description: Deletes a specific Object based on it id
+      security:
+        - ApiKeyAuth: []            
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: MongoDB id
+          schema:
+            type: string      
+
+      responses:
+        201:
+          description: Object deleted succesfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Object"
               
