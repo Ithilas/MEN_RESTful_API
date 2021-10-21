@@ -16,6 +16,7 @@ app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDefinition));
 const projectRoutes = require("./routes/project");
 const assignmentRoutes = require("./routes/assignment");
 const authRoutes = require('./routes/auth');
+const objectRoutes = require('./routes/object');
 
 
 require("dotenv-flow").config();
@@ -44,6 +45,7 @@ app.get("/api/welcome", (req, res) => {
 app.use("/api/projects", projectRoutes);
 app.use("/api/assignments", assignmentRoutes);
 app.use("/api/user", authRoutes);
+app.use("/api/objects", objectRoutes);
 
 
 const PORT = process.env.PORT || 4000;
